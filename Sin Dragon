@@ -1,12 +1,13 @@
- -- Lil edited by gObl00x (User: random_hacke6) --
-         -- Credits to the Creator --
-            ---------------------------------
+    -- Lil edited bu gObl00x (User: random_hacke6) --
+            -- Credits to the Creator --
+--------------------------------------------------------------
 --some sin thing--
 --------------------------------------------------------------
---By CKbackup (Sugarie Saffron), credits to original creator--
+--By CKbackup [ ToScript ], credits to original creator--
 --------------------------------------------------------------
+
 Player=game:GetService("Players").LocalPlayer
-Character=Player.Character
+Character=Player.Character 
 PlayerGui=Player.PlayerGui 
 Backpack=Player.Backpack 
 Torso=Character.Torso 
@@ -73,7 +74,7 @@ function NoOutline(Part)
 Part.TopSurface,Part.BottomSurface,Part.LeftSurface,Part.RightSurface,Part.FrontSurface,Part.BackSurface = 10,10,10,10,10,10
 end
 player=Player 
-ch=Player.Character
+ch=Character
 RSH=ch.Torso["Right Shoulder"] 
 LSH=ch.Torso["Left Shoulder"] 
 -- 
@@ -535,7 +536,7 @@ Damagefunc=function(hit,efft,minim,maxim,knockback,Type,Property,Delay,Knockback
                         c.Value=game:service("Players").LocalPlayer
                         c.Parent=h
                         game:GetService("Debris"):AddItem(c,.5)
-                Damage=0
+                Damage=math.random(minim,maxim)
 --                h:TakeDamage(Damage)
                 blocked=false
                 block=hit.Parent:findFirstChild("Block")
@@ -562,7 +563,7 @@ Damagefunc=function(hit,efft,minim,maxim,knockback,Type,Property,Delay,Knockback
 				puncheff(hit)
 				end
 				h.MaxHealth = 100
-                h.Health=h.Health-0
+                h.Health=h.Health-Damage
                 showDamage(hit.Parent,Damage,.5,TorsoColor)
                 if Type=="Knockdown" then
                 local hum=hit.Parent:FindFirstChildOfClass("Humanoid")
@@ -698,6 +699,7 @@ end
 
     Player=game:GetService('Players').LocalPlayer
     Character=Player.Character
+    Mouse=Player:GetMouse()
     m=Instance.new('Model',Character)
 
 
@@ -992,7 +994,7 @@ for i = 1,10 do
 swait()
 Trail.Transparency = Trail.Transparency +0.1
 end end)()end end)()
-    con1=Gear.Touched:connect(function(hit) Damagefunc(hit,"Blunt",0,"Normal",RootPart,0) end) 
+    con1=Gear.Touched:connect(function(hit) Damagefunc(hit,"Blunt",20,25,20,"Normal",RootPart,.2,1) end) 
     for i=0,1,0.08 do
         swait()
 		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0,0)*angles(math.rad(-5),math.rad(0),math.rad(-10)),.3)
@@ -1236,8 +1238,8 @@ for i = 1,10 do
 swait()
 Trail.Transparency = Trail.Transparency +0.1
 end end)()end end)()
-    con1=Gear2.Touched:connect(function(hit) Damagefunc(hit,"Blunt",10,20,0,"Normal",RootPart,.2,1) end) 
-    con2=Gear.Touched:connect(function(hit) Damagefunc(hit,"Blunt",10,20,0,"Normal",RootPart,.2,1) end) 
+    con1=Gear2.Touched:connect(function(hit) Damagefunc(hit,"Blunt",10,20,math.random(20,40),"Normal",RootPart,.2,1) end) 
+    con2=Gear.Touched:connect(function(hit) Damagefunc(hit,"Blunt",10,20,math.random(20,40),"Normal",RootPart,.2,1) end) 
     for i=0,1,0.08 do
         swait()
 		RootJoint.C0=clerp(RootJoint.C0,RootCF*cf(0,0,-1)*angles(math.rad(40),math.rad(0),math.rad(-40)),.3)
@@ -1294,7 +1296,19 @@ function BlastEffect(brickcolor, cframe, x1, y1, z1, x2, y2, z2)
 end
 
 function MagniDamage(par,efft,magni,minim,maxim,knockback,Type,Property,Delay,KnockbackType,decreaseblock)
- print("lol")
+  for _, c in pairs(workspace:GetDescendants()) do
+    local hum = c:FindFirstChildOfClass("Humanoid")
+    if hum ~= nil and c:FindFirstChild("IsTeamMateOfCK")==nil then
+      local head = (c:findFirstChild("Torso") or c:findFirstChild("UpperTorso"))
+      if head ~= nil then
+        local targ = head.Position - par.Position
+        local mag = targ.magnitude
+        if magni >= mag and c.Name ~= Player.Name then
+          Damagefunc(head,efft,minim,maxim,knockback,Type,Property,Delay,KnockbackType,decreaseblock)
+        end
+      end
+    end
+  end
 end
 
 function MagicCircle4(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
@@ -1642,9 +1656,9 @@ end
 		so(162246701,DragonHead,1,5)
 		local frontcf = DragonHead.CFrame * CFrame.new(0,0,-5)
 		local sannd = Instance.new("Sound",Torso)
-		sannd.SoundId = "rbxassetid://345052019"
-		sannd.Looped = false
-		sannd.Volume = 1000
+		sannd.SoundId = "rbxassetid://162246683"
+		sannd.Looped = true
+		sannd.Volume = 1
 		sannd:Play()
 		local hitcf = mouse.Hit
 		local ref = it("Part",Character)
