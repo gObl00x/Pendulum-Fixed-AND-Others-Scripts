@@ -16,19 +16,8 @@ Duration = 15;
    sound.SoundId = getcustomasset("Sin Dragon Soundtrack.mp3")
    sound.Volume = 1
    sound.Looped = true
-   sound.Parent = workspace
+   sound.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
    sound:Play()
-   
-   
-   local player = game:GetService("Players").LocalPlayer
-   local playerGui = player:WaitForChild("PlayerGui")
-   local workspace = game:GetService("Workspace")
-   
-   local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
-   humanoid.Died:Connect(function()
-       sound:Stop()
-       sound:Destroy()
-   end)
 
 --------------------------------------------------------------
 --some sin thing--
