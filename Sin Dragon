@@ -1,18 +1,40 @@
       -- Lil edited by gObl00x (User: random_hacke6) --
              -- Credts to the Creator --
-             
+
+-- gObl00x Notification
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "gOb scripts";
+	Text = "LOL Time to Exploit!";
+	Icon = "rbxthumb://type=Asset&id=126389658690593&w=150&h=150"})
+Duration = 15;
+
+
+-- Soundtrack
+   writefile("Sin Dragon Soundtrack.mp3", game:HttpGet("https://github.com/gObl00x/Soundtracks/raw/refs/heads/main/Sin%20Dragon%20Soundtrack.mp3"))
+   local sound = Instance.new("Sound")
+   sound.SoundId = getcustomasset("Sin Dragon Soundtrack.mp3")
+   sound.Volume = 1
+   sound.Looped = true
+   sound.Parent = workspace
+   sound:Play()
+   
+   
+   local player = game:GetService("Players").LocalPlayer
+   local playerGui = player:WaitForChild("PlayerGui")
+   local workspace = game:GetService("Workspace")
+   
+   local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+   humanoid.Died:Connect(function()
+       sound:Stop()
+       sound:Destroy()
+   end)
+
 --------------------------------------------------------------
 --some sin thing--
 --------------------------------------------------------------
 --By CKbackup , credits to original creator--
 --------------------------------------------------------------
-
--- gObl00x Notification
-game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "gOb Fixed-scripts";
-	Text = "LOL Time to Exploit!";
-	Icon = "rbxthumb://type=Asset&id=126389658690593&w=150&h=150"})
-Duration = 15;
 
 Player=game:GetService("Players").LocalPlayer
 Character=Player.Character 
