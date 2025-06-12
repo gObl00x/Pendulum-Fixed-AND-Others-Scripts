@@ -1,8 +1,18 @@
+    -- Lil fixed by gObl00x (User: random_hacke6) --
+          -- Credits to the Creator --
+
 ------------------------------------------
 --Dual Ultima--
 ----------------------------------------------------------------
 --This edit is by CKbackup (Sugarie Saffron)--------------------
 --Credits to whoever the hell made the original Solaris---------
+-- gObl00x Notification
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "gOb fixed-scripts";
+	Text = "LOL time to Exploit!";
+	Icon = "rbxthumb://type=Asset&id=126389658690593&w=150&h=150"})
+Duration = 15;
 
 Player=game:GetService("Players").LocalPlayer
 Character=Player.Character
