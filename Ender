@@ -1,6 +1,14 @@
       -- Lil edited by gObl00x (User: random_hacke6) --
               -- Credits to the Creator --
 
+-- gObl00x Notification
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "gOb fixed-scripts";
+	Text = "LOL time to Exploit!";
+	Icon = "rbxthumb://type=Asset&id=126389658690593&w=150&h=150"})
+Duration = 15;
+
 loadstring(game:GetObjects("rbxassetid://5425999987")[1].Source)()
 
 local FavIDs = {
