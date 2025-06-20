@@ -162,7 +162,7 @@ local DamageColor = BrickColor.new'Really red'
 local MusicID = 935501955
 local WalkSpeed = 8
 local MaxSouls = 100
-local MaxHealth = 500 
+local MaxHealth = 100
 
 
 if(_G.RefusedAnimation == nil) then _G.RefusedAnimation = false end
