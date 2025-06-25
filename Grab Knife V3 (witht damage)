@@ -1,3 +1,14 @@
+      -- Lil edited by gObl00x (User: random_hacke6) --
+             -- Credts to the Creator --
+
+-- gObl00x Notification
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "gOb scripts";
+	Text = "LOL Time to Exploit!";
+	Icon = "rbxthumb://type=Asset&id=126389658690593&w=150&h=150"})
+Duration = 15;
+
+--Grab Knife
 local player = game.Players.LocalPlayer
 local rekt = {}
 local paralyzed = false
